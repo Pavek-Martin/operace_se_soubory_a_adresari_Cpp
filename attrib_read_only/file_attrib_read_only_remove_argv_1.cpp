@@ -26,7 +26,7 @@ int main(int argc, char** argv) {
     // nacte aktualni atributy souboru
     DWORD attributes = GetFileAttributesA(cesta_soubor);
     if (attributes == INVALID_FILE_ATTRIBUTES) {
-        cout<<"nelze nacist atributy souboru "<<'"'<<cesta_soubor<<'"'<<endl;
+        cout<<"nelze nacist atributy adresare "<<'"'<<cesta_soubor<<'"'<<endl;
         system("pause");
         return 1;
     }
@@ -34,12 +34,12 @@ int main(int argc, char** argv) {
     // odebrani priznaku ReadOnly
     attributes &= ~FILE_ATTRIBUTE_READONLY;
     if (!SetFileAttributesA(cesta_soubor, attributes)) {
-    cout<<"nepodarilo se odebrat atribut ReadOnly u souboru "<<'"'<<cesta_soubor<<'"'<<endl;
+    cout<<"nepodarilo se odebrat atribut ReadOnly u adresare "<<'"'<<cesta_soubor<<'"'<<endl;
     system("pause");
     return 1;
 }
 
-    cout<<"u souboru "<<'"'<<cesta_soubor<<'"'<<" byl uspesne odebran atribut ReadOnly"<<endl;
+    cout<<"u adresare "<<'"'<<cesta_soubor<<'"'<<" byl uspesne odebran atribut ReadOnly"<<endl;
 
 	system("pause");
 	return 0;
